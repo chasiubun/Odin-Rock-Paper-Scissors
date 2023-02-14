@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = Math.floor(Math.random()*3);
+        if (number == 1) {
+            getComputerChoice = "Rock";
+        }
+        else if (number == 2) {
+            getComputerChoice = "Paper";
+        }
+        else if (number == 0) {
+            getComputerChoice = "Scissors";
+        }
+        //console.log(getComputerChoice); NOW WE HAVE COMPUTER
+        let playerSelection = prompt("Rock, Paper, Scissors?");
+        playerSelection = playerSelection.toUpperCase();
+        if (playerSelection == "ROCK" && getComputerChoice == "Paper") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+        if (playerSelection == "PAPER" && getComputerChoice == "Scissors") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+        if (playerSelection == "SCISSORS" && getComputerChoice == "Rock") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+    </script>
+</body>
+</html>

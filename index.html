@@ -9,22 +9,33 @@
 </head>
 <body>
     <script>
-        let number = Math.floor(Math.random()*3);
-        if (number == 1) {
-            getComputerChoice = "Rock";
-        }
-        else if (number == 2) {
-            getComputerChoice = "Paper";
-        }
-        else if (number == 0) {
-            getComputerChoice = "Scissors";
-        }
-        //console.log(getComputerChoice); NOW WE HAVE COMPUTER
-        let playerSelection = prompt("Rock, Paper, Scissors?");
-        playerSelection = playerSelection.toUpperCase();
-        if (playerSelection == "ROCK" && getComputerChoice == "Paper") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
-        if (playerSelection == "PAPER" && getComputerChoice == "Scissors") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
-        if (playerSelection == "SCISSORS" && getComputerChoice == "Rock") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+ 
+                    let number = Math.floor(Math.random()*3);
+                    if (number == 1) {
+                        getComputerChoice = "ROCK";
+                    }
+                    else if (number == 2) {
+                        getComputerChoice = "PAPER";
+                    }
+                    else if (number == 0) {
+                        getComputerChoice = "SCISSORS";
+                    }
+                    console.log(getComputerChoice)
+                    let playerSelection = prompt("Rock, Paper, Scissors?");
+                    playerSelection = playerSelection.toUpperCase();
+                    //LOSE CONDITIONS
+                    if (playerSelection == "ROCK" && getComputerChoice == "PAPER") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+                    if (playerSelection == "PAPER" && getComputerChoice == "SCISSORS") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+                    if (playerSelection == "SCISSORS" && getComputerChoice == "ROCK") {console.log("You lose!", getComputerChoice, " beats ", playerSelection);}
+                    //DRAW CONDITIONS
+                    if (playerSelection === getComputerChoice) {console.log("Draw!");}
+                    //WIN CONDITIONS
+                    if (playerSelection == "PAPER" && getComputerChoice == "ROCK") {console.log("You win!", playerSelection, " beats ", getComputerChoice);}
+                    if (playerSelection == "ROCK" && getComputerChoice == "SCISSORS") {console.log("You win!", playerSelection, " beats ", getComputerChoice);}
+                    if (playerSelection == "SCISSORS" && getComputerChoice == "PAPER") {console.log("You win!", playerSelection, " beats ", getComputerChoice);}
+                    //ERROR CONDITIONS
+                    //if (playerSelection !== "ROCK" || "PAPER" || "SCISSORS"); {console.log("invalid input")};
+                    ;
     </script>
 </body>
 </html>

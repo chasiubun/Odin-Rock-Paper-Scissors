@@ -37,34 +37,34 @@ function userSelect(){
 //LOSE CONDITIONS
 function playRound(playerSelection, computerChoice){
     if (playerSelection == "ROCK" && computerChoice == "PAPER") //lose rule
-        {console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
+        {//console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
         computerScore++; //score changer
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
     } 
     if (playerSelection == "PAPER" && computerChoice == "SCISSORS") 
-        {console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        {//console.log("You lose!", computerChoice, " beats ", playerSelection); 
         computerScore++; 
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
     if (playerSelection == "SCISSORS" && computerChoice == "ROCK") {
-        console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        //console.log("You lose!", computerChoice, " beats ", playerSelection); 
         computerScore++; 
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
 //DRAW CONDITIONS
     if (playerSelection === computerChoice) 
         {
-        console.log("Draw!");
+        //console.log("Draw!");
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
     }
 //WIN CONDITIONS
     if (playerSelection == "PAPER" && computerChoice == "ROCK") 
-        {console.log("You win!", playerSelection, " beats ", computerChoice); 
+        {//console.log("You win!", playerSelection, " beats ", computerChoice); 
         playerScore++; 
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     if (playerSelection == "ROCK" && computerChoice == "SCISSORS") 
-        {console.log("You win!", playerSelection, " beats ", computerChoice);
+        {//console.log("You win!", playerSelection, " beats ", computerChoice);
         playerScore++; 
         //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }

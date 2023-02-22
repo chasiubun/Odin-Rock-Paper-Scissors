@@ -1,11 +1,21 @@
 .header{
-    background-color: bisque;
+    background-color:rgb(188, 172, 157);
     text-align: center;
     font-size: 50px;
+    margin: none;
+}
+.content{
+    background-color: ivory;
+    position: relative;             /*position is relative to footer*/
+    min-height: auto;              /*vh = relative to x% of the view port*/
+    padding-bottom: 0vh;
 }
 .rules{
-    display: flex;
-    justify-content: center;
+    margin: auto;
+    display: flex;              /*keeps content horizontally centered*/
+    justify-content: center;    /*keeps content horizontally centered*/
+    align-items: center;
+    height: 64vh;
 }
 .buttonChoices{
     padding: 20px;
@@ -15,7 +25,11 @@
 .button{
     font-size: 25px;
 }
-.scoringGeneral{
+.footer{
+    position: absolute;     /*footer is immovable*/
+    bottom: 0;              /*place footer at the bottom*/
+    width: 100%;            /*stretches the foot out container width*/
+    background-color:rgb(188, 172, 157);
     font-size: larger;
     text-align: center;
 }

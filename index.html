@@ -8,56 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-    let playerScore = 0;
-    let computerScore = 0;
-        for (let round = 0; round < 5; round++){ //loop
-            let number = Math.floor(Math.random()*3); //assign num to game element
-            if (number == 1) {
-                getComputerChoice = "ROCK";
-            }
-            else if (number == 2) {
-                getComputerChoice = "PAPER";
-            }
-            else if (number == 0) {
-                getComputerChoice = "SCISSORS";
-            }
-            console.log(getComputerChoice)
-            let playerSelection = prompt("Rock, Paper, Scissors?");
-            playerSelection = playerSelection.toUpperCase();
-            //LOSE CONDITIONS
-            if (playerSelection == "ROCK" && getComputerChoice == "PAPER") //lose rule
-                {console.log("You lose!", getComputerChoice, " beats ", playerSelection); //lose notification & logic
-                computerScore++; //score changer
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);} //score keeper
-            if (playerSelection == "PAPER" && getComputerChoice == "SCISSORS") 
-                {console.log("You lose!", getComputerChoice, " beats ", playerSelection); 
-                computerScore++; 
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);}
-            if (playerSelection == "SCISSORS" && getComputerChoice == "ROCK") {
-                console.log("You lose!", getComputerChoice, " beats ", playerSelection); 
-                computerScore++; 
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);}
-            //DRAW CONDITIONS
-            if (playerSelection === getComputerChoice) 
-                {console.log("Draw!");
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)}
-            //WIN CONDITIONS
-            if (playerSelection == "PAPER" && getComputerChoice == "ROCK") 
-                {console.log("You win!", playerSelection, " beats ", getComputerChoice); 
-                playerScore++; 
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);}
-            if (playerSelection == "ROCK" && getComputerChoice == "SCISSORS") 
-                {console.log("You win!", playerSelection, " beats ", getComputerChoice);
-                playerScore++; 
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);}
-            if (playerSelection == "SCISSORS" && getComputerChoice == "PAPER") 
-                {console.log("You win!", playerSelection, " beats ", 
-                getComputerChoice);playerScore++; 
-                console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);}
-            //ERROR CONDITIONS
-            //if (playerSelection !== "ROCK" || "PAPER" || "SCISSORS"); {console.log("invalid input")};
-        }
+    <script src="script.js">
     </script>
 </body>
 </html>

@@ -80,10 +80,10 @@ function finalscore(playerScore, computerScore){
     }
 }
 function game(){
-    for (let round = 0; round < 5; round++){ //loop
+    //for (let round = 0; round < 5; round++){ //loop
         getComputerChoice(); //retrieve computer output
         userSelect(); //retrieve user input
         playRound(playerSelection, computerChoice)} ;
         finalscore(playerScore, computerScore);
-}
+
 game()

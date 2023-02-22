@@ -1,0 +1,21 @@
+.header{
+    background-color: bisque;
+    text-align: center;
+    font-size: 50px;
+}
+.rules{
+    display: flex;
+    justify-content: center;
+}
+.buttonChoices{
+    padding: 20px;
+    display:flex;
+    justify-content: space-around;
+}
+.button{
+    font-size: 25px;
+}
+.scoringGeneral{
+    font-size: larger;
+    text-align: center;
+}

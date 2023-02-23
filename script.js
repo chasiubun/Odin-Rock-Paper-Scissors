@@ -5,6 +5,7 @@ let playerScore = 0;
 let computerScore = 0;
 let computerChoice;
 let playerSelection;
+let gameResult;
 
 //RETRIEVE & STORE COMPUTER INPUT(ROCK, PAPER, OR SCISSORS) VIA RANDOM NUMBER
 function getComputerChoice(){
@@ -37,41 +38,41 @@ function userSelect(){
 //LOSE CONDITIONS
 function playRound(playerSelection, computerChoice){
     if (playerSelection == "ROCK" && computerChoice == "PAPER") //lose rule
-        {console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
-        computerScore++; //score changer
+        {gameResult = "win"; computerScore++; //code game result and change score
+        console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
         console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
     } 
     if (playerSelection == "PAPER" && computerChoice == "SCISSORS") 
-        {//console.log("You lose!", computerChoice, " beats ", playerSelection); 
-        computerScore++; 
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        {gameResult = "win"; computerScore++; 
+        console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
     if (playerSelection == "SCISSORS" && computerChoice == "ROCK") {
-        //console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        console.log("You lose!", computerChoice, " beats ", playerSelection); 
         computerScore++; 
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
 //DRAW CONDITIONS
     if (playerSelection === computerChoice) 
         {
-        //console.log("Draw!");
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
+        console.log("Draw!");
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
     }
 //WIN CONDITIONS
     if (playerSelection == "PAPER" && computerChoice == "ROCK") 
-        {//console.log("You win!", playerSelection, " beats ", computerChoice); 
+        {console.log("You win!", playerSelection, " beats ", computerChoice); 
         playerScore++; 
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     if (playerSelection == "ROCK" && computerChoice == "SCISSORS") 
-        {//console.log("You win!", playerSelection, " beats ", computerChoice);
+        {console.log("You win!", playerSelection, " beats ", computerChoice);
         playerScore++; 
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     if (playerSelection == "SCISSORS" && computerChoice == "PAPER") 
         {console.log("You win!", playerSelection, " beats ", 
         computerChoice);playerScore++; 
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     }
 function finalscore(playerScore, computerScore){
@@ -86,10 +87,41 @@ function game(){
         playRound(playerSelection, computerChoice)} ;
         finalscore(playerScore, computerScore);
 
-//DOM MANIPULATION
-var rockButton = document.getElementsByClassName("buttonRock")
+//DOM MANIPULATION: 
 
-rockButton.addEventListener("click", myTestFunction);
+    //ASSIGN PLAYER CHOICE TO BUTTONS
+const buttonRock = document.getElementById('buttonRock');
+const buttonScissors = document.getElementById('buttonScissors');
+const buttonPaper = document.getElementById('buttonPaper');
+    //DISPLAY SCORING
+const playerScoreDisplay = document.getElementById("playerScore"); //grab the element
+const computerScoreDisplay = document.getElementById("computerScore");
 
-function myTestFunction(){
-console.log("This button has been clicked!")}
+buttonRock.addEventListener(
+    'click', () => 
+        {playRound("ROCK", computerChoice); 
+        changeScoreDisplay()
+        getComputerChoice(); 
+        console.log(computerChoice);} // () => is used to apply the click to a function....After the click the button will also get another computer choice.
+)
+buttonScissors.addEventListener(
+    'click',  () => 
+        {playRound("SCISSORS", computerChoice);
+        changeScoreDisplay()
+        getComputerChoice();}
+);
+
+buttonPaper.addEventListener(
+    'click',  () => 
+    {playRound("PAPER", computerChoice);
+    changeScoreDisplay();
+    getComputerChoice();}
+);
+
+function changeScoreDisplay(){
+    playerScoreDisplay.innerHTML = playerScore 
+    computerScoreDisplay.innerHTML = computerScore
+}
+
+if (playerScore === 5) {alert("Game Over! You win!")}
+if (computerScore === 5) {alert("Game Over! You win!")}

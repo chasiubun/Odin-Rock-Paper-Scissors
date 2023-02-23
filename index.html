@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="script.js"></script> 
     
     <div class="header">JANKEN-PON</div>
     <div class="content">
@@ -16,16 +15,19 @@
             <img src="rules.jpeg" alt="Janken rules">
         </div>
         <div class="buttonChoices">
-            <button id="myBtn">Try it</button>
-            <button class = "buttonRock">Guu! (Rock) </button>
-            <button class = "buttonScissors">Choki!! (Scissors)</button>
-            <button class = "buttonPaper">Paa!!! (Paper)</button>
+            <button id = "buttonRock">Guu! (Rock) </button>
+            <button id = "buttonScissors">Choki!! (Scissors)</button>
+            <button id = "buttonPaper">Paa!!! (Paper)</button>
         </div>  
     </div>
     <div class = "footer">
-        <div class = "scoreLeft">Player Score: </div>
-        <div class = "scoreRight">Computer Score: </div>
+        <div id = "scoreLeft">Player Score: </div>
+        <div id = "playerScore">0</div>
+        <div id = "scoreRight">Computer Score:  </div>
+        <div id = "computerScore">0</div>
+
     </div>
-        
+    <script src="script.js"></script> 
+       
 </body>
 </html>

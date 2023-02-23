@@ -38,42 +38,46 @@ function userSelect(){
 //LOSE CONDITIONS
 function playRound(playerSelection, computerChoice){
     if (playerSelection == "ROCK" && computerChoice == "PAPER") //lose rule
-        {gameResult = "win"; computerScore++; //code game result and change score
-        console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
+        {computerScore++; //code game result and change score
+        //console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
+        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
     } 
     if (playerSelection == "PAPER" && computerChoice == "SCISSORS") 
         {gameResult = "win"; computerScore++; 
-        console.log("You lose!", computerChoice, " beats ", playerSelection); 
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        // console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
     if (playerSelection == "SCISSORS" && computerChoice == "ROCK") {
-        console.log("You lose!", computerChoice, " beats ", playerSelection); 
+        // console.log("You lose!", computerChoice, " beats ", playerSelection); 
         computerScore++; 
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
     }
 //DRAW CONDITIONS
     if (playerSelection === computerChoice) 
         {
-        console.log("Draw!");
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
+        // console.log("Draw!");
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
     }
 //WIN CONDITIONS
     if (playerSelection == "PAPER" && computerChoice == "ROCK") 
-        {console.log("You win!", playerSelection, " beats ", computerChoice); 
-        playerScore++; 
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        {playerScore++; 
+        // console.log("You win!", playerSelection, " beats ", computerChoice); 
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     if (playerSelection == "ROCK" && computerChoice == "SCISSORS") 
-        {console.log("You win!", playerSelection, " beats ", computerChoice);
-        playerScore++; 
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        {playerScore++;
+        // console.log("You win!", playerSelection, " beats ", computerChoice);
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
     if (playerSelection == "SCISSORS" && computerChoice == "PAPER") 
-        {console.log("You win!", playerSelection, " beats ", 
-        computerChoice);playerScore++; 
-        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+        {playerScore++; 
+        // console.log("You win!", playerSelection, " beats ", 
+        // computerChoice);
+        // console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
         }
+    changeScoreDisplay()
+    if (playerScore === 5) {alert("Game Over! You win!"); playerScore = 0; computerScore = 0}
+    if (computerScore === 5) {alert("Game Over! You win!"); playerScore = 0; computerScore = 0}    
     }
 function finalscore(playerScore, computerScore){
     if (playerScore > computerScore) {
@@ -100,21 +104,18 @@ const computerScoreDisplay = document.getElementById("computerScore");
 buttonRock.addEventListener(
     'click', () => 
         {playRound("ROCK", computerChoice); 
-        changeScoreDisplay()
-        getComputerChoice(); 
-        console.log(computerChoice);} // () => is used to apply the click to a function....After the click the button will also get another computer choice.
+        getComputerChoice();} 
+        //console.log(computerChoice);} // () => is used to apply the click to a function....After the click the button will also get another computer choice.
 )
 buttonScissors.addEventListener(
     'click',  () => 
         {playRound("SCISSORS", computerChoice);
-        changeScoreDisplay()
         getComputerChoice();}
 );
 
 buttonPaper.addEventListener(
     'click',  () => 
     {playRound("PAPER", computerChoice);
-    changeScoreDisplay();
     getComputerChoice();}
 );
 
@@ -122,6 +123,3 @@ function changeScoreDisplay(){
     playerScoreDisplay.innerHTML = playerScore 
     computerScoreDisplay.innerHTML = computerScore
 }
-
-if (playerScore === 5) {alert("Game Over! You win!")}
-if (computerScore === 5) {alert("Game Over! You win!")}

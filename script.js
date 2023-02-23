@@ -37,9 +37,9 @@ function userSelect(){
 //LOSE CONDITIONS
 function playRound(playerSelection, computerChoice){
     if (playerSelection == "ROCK" && computerChoice == "PAPER") //lose rule
-        {//console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
+        {console.log("You lose!", computerChoice, " beats ", playerSelection); //notify user of game result & logic
         computerScore++; //score changer
-        //console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
+        console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);//test score keeper
     } 
     if (playerSelection == "PAPER" && computerChoice == "SCISSORS") 
         {//console.log("You lose!", computerChoice, " beats ", playerSelection); 
@@ -86,4 +86,10 @@ function game(){
         playRound(playerSelection, computerChoice)} ;
         finalscore(playerScore, computerScore);
 
-game()
+//DOM MANIPULATION
+var rockButton = document.getElementsByClassName("buttonRock")
+
+rockButton.addEventListener("click", myTestFunction);
+
+function myTestFunction(){
+console.log("This button has been clicked!")}

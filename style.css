@@ -1,33 +1,33 @@
 .header{
     background-color:rgb(188, 172, 157);
     text-align: center;
-    font-size: 50px;
+    font-size: xx-large;
     margin: none;
 }
 .content{
     background-color: ivory;
-    position: relative;             /*position is relative to footer*/
     min-height: auto;              /*vh = relative to x% of the view port*/
-    padding-bottom: 0vh;
+    
 }
 .rules{
     margin: auto;
     display: flex;              /*keeps content horizontally centered*/
     justify-content: center;    /*keeps content horizontally centered*/
     align-items: center;
-    height: 64vh;
+    padding: 50px;
 }
 .buttonChoices{
-    padding: 20px;
+    padding: 50px;
     display:flex;
     justify-content: space-around;
+    background-color: blanchedalmond;
 }
 .button{
     font-size: 25px;
 }
 .footer{
-    position: absolute;     /*footer is immovable*/
-    bottom: 0;              /*place footer at the bottom*/
+/*    position: absolute;     /*footer is immovable*/
+/*    bottom: 0;              /*place footer at the bottom*/ 
     width: 100%;            /*stretches the foot out container width*/
     background-color:rgb(188, 172, 157);
     font-size: larger;
